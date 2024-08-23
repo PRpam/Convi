@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Chá do Nicolas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('https://i.pinimg.com/originals/3c/19/b5/3c19b50698d32cafbe948b0bfe7096c9.jpg') no-repeat center center;
+            background-size: cover;
+            background-position: cover;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+            box-sizing: border-box;
+            
+        }
+        h1 {
+           font-family: 'Dancing scrip' , cursive;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        p {
+            font-family: 'patrick Hand', cursive;
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+        .suggestions {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .btn, .form-group button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover, .form-group button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-top: 20px;
+        }
+        .form-group input {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+        .thank-you {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        function showThankYouMessage() {
+            const name = document.getElementById('name').value;
+            if (name) {
+                document.getElementById('invitation').style.display = 'none';
+                document.getElementById('thank-you').style.display = 'block';
+                document.getElementById('thank-you').innerHTML = `Muito obrigado, ${name}! Estamos ansiosos para celebrar com você.`;
+            } else {
+                alert('Por favor, insira seu nome.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1><n></n><i>Chá do Nicolas !</i></n></h1>
+            <p>Mamãe e Papai </p>
+            <p> Estão muito felizes com a minha chagada 
+            <br>e você é nosso convidado
+            <br>para participar do meu Chá de Bebê!!</p> 
+            <p>Dia: 10 de Novembro ás 15 horas<br>Local: Casa da vovó e vovô </p>
+            <div class="suggestions">
+                <p>Sugestões de presente:
+                <br>Fralda M ou G
+                <br>E um mimo de sua escolha</p>
+                <h3>Por favor, confirme sua presença abaixo.</h3>
+            </div>
+            <div id="invitation">
+                
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Seu nome">
+                    <button onclick="showThankYouMessage()">Confirmar Presença</button>
+                </div>
+            </div>
+            <div id="thank-you" class="thank-you"></div>
+        </div>
+    </div>
+</body>
+</html>
